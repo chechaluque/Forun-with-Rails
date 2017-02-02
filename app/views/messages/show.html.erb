@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="col-md-6 col-md-offset-3">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @message.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @message.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @message.description %>
-</p>
+  <p><%= time_ago_in_words(@message.created_at) %> ago</p>
 
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= @message.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_message_path(@message) %> |
+  <%= link_to 'Back', messages_path %>
+</div>
