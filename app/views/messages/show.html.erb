@@ -12,6 +12,10 @@
     <strong>Description:</strong>
     <%= @message.description %>
   </p>
+  <h3>Comments:</h3>
+  <p><%= render @message.comments %></p>
+  <h3>Join Discussion:</h3>
+  <%= render 'comments/form' %>
 
   <%= link_to 'Edit', edit_message_path(@message) %> |
   <%= link_to 'Back', messages_path %>

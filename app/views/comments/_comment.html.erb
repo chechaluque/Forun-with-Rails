@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= comment.content %>
+</p>
+
+<p>
+  <strong>By:</strong>
+  <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %> ago
+</p> <br>
