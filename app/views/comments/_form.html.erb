@@ -1,0 +1,11 @@
+<%= simple_form_for([@message, @message.comments.build]) do |f| %>
+  <div class="form-group">
+
+    <%= f.input :content, label: "Comments", class: "form-control" %>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
