@@ -13,16 +13,18 @@
     <%= @message.description %>
   </p>
   <h3>Comments:</h3>
-  <div class="panel panel-success">
-    <div class="panel-bod">
-      <p><%= render @message.comments %></p>
-    </div>
 
-  </div>
+      <p><%= render @message.comments %></p>
+
+
+
 
   <h3>Join Discussion:</h3>
   <%= render 'comments/form' %>
-
-  <%= link_to 'Edit', edit_message_path(@message), class: "btn btn-success" %> |
+<% if user_signed_in?  %>
+  <% if @message.user_id == current_user %>
+    <%= link_to 'Edit', edit_message_path(@message), class: "btn btn-success" %> |
+  <% end %>
+<% end %>  
   <%= link_to 'Back', messages_path, class: "btn btn-info" %>
 </div>
